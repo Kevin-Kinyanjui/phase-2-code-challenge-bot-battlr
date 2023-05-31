@@ -43,7 +43,10 @@ function BotCard({ bot, toogleShow, deleteBot }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() => deleteBot(bot.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteBot(bot.id);
+                }}
               >
                 x
               </button>
